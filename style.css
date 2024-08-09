@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --clr-grey-700: hsl(0, 0%, 20%);
+  --clr-grey-800: hsl(0, 0%, 12%);
+  --clr-grey-900: hsl(0, 0%, 8%);
+
+  --clr-green: hsl(75, 94%, 57%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff: "Inter", "sans-serif";
+
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-800: 800;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--ff);
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-grey-900);
+  text-align: center;
+}
+
+#social-link-profile {
+  max-width: 375px;
+  margin: auto;
+  background-color: var(--clr-grey-800);
+  padding: 2rem;
+  border-radius: 0.75rem;
+}
+
+.profile-img {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: box-shadow 0.2s ease-in;
+}
+
+.profile-img:hover {
+  box-shadow: 0 0 15px hsla(75, 94%, 57%, 0.4);;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  
+}
+
+.user-info {
+  margin: 2rem 0;
+}
+
+.user-info h1 {
+color: var(--clr-white);
+font-size: 1.6rem;
+font-weight: var(--fw-600);
+}
+
+.user-info h1::selection,
+.user-description::selection {
+  background-color: var(--clr-green);
+  color: var(--clr-grey-900);
+}
+
+.user-info p::selection {
+  color: white;
+}
+
+.user-info p {
+  color: var(--clr-green);
+  font-weight: var(--fw-800);
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  
+}
+
+.user-description {
+  color: var(--clr-white);
+  margin-bottom: 1.5rem;
+
+}
+
+.user-social-links ul {
+list-style: none;
+}
+
+.user-social-links ul li {
+  position: relative;
+  background-color: var(--clr-grey-700);
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0.9rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 3rem;
+ z-index: 10;
+  overflow: hidden;
+  
+}
+
+
+
+
+.user-social-links ul li::after {
+  width: 100%;
+  height: 3rem;
+  content: '';
+  background-color: var(--clr-green);
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  transform: translateX(100%);
+  z-index: -1;
+  transition: transform 0.2s ease-in;
+  
+}
+
+.user-social-links ul li:hover  a {
+  color: var(--clr-grey-900);
+  transition: all 0.3s ease;
+}
+
+.user-social-links ul li:hover::after {
+animation: swipeLeft 0.2s linear forwards;
+}
+
+.user-social-links ul li a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--clr-white);
+  font-weight: var(--fw-800);
+  
+}
+
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  align-self: center;
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+.attribution a {
+  color: var(--clr-green)
+}
+
+
+@keyframes swipeLeft {
+  from {
+    transform: translateX(100%);
+  } to {
+    transform: translateX(0%);
+  }
+}
